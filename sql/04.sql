@@ -37,4 +37,5 @@ FROM (
 ) t
 GROUP BY title
 ORDER BY "similarity score" DESC, title
+;
 
