@@ -3,18 +3,18 @@
 -- You may directly modify this table.
 
 CREATE TABLE project (
-    id SERIAL PRIMARY KEY,
     author_id BIGINT NOT NULL,
-    target_type VARCHAR(2),
+    created_at TIMESTAMP WITH TIME ZONE,
+    updated_at TIMESTAMPTZ,
+    id SERIAL PRIMARY KEY,
     target_id INTEGER,
-    developer_addr INET,
-    developer_id UUID,
-    title CHAR(256),
-    data TEXT,
     project_id INTEGER NOT NULL UNIQUE,
     action SMALLINT NOT NULL,
-    created_at TIMESTAMP WITH TIME ZONE,
-    updated_at TIMESTAMPTZ
+    developer_id UUID,
+    title CHAR(256),
+    target_type VARCHAR(2),
+    developer_addr INET,
+    data TEXT
 );
 
 -- PART 2:
@@ -37,7 +37,7 @@ INSERT INTO project VALUES (
     '2022-03-09T18:34:27+00:00'
 );
 
--- Header:
--- Data:
--- Padding:
--- Total:
+-- Header: 32
+-- Data: 56
+-- Padding: 0
+-- Total: 88
